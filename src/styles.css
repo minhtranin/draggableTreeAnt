@@ -1,0 +1,47 @@
+@import "~antd/dist/antd.css";
+.App {
+  font-family: sans-serif;
+  /* text-align: center; */
+}
+
+.g-search-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.g-action {
+  width: '202px';
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+.g-folder {
+  /* display: flex;
+  flex-flow: column; */
+  width: 320px;
+}
+.ant-tree-node-content-wrapper {
+  display: flex;
+}
+.ant-select-tree-title {
+  /* border: 1px solid; */
+  width: 50%;
+}
+.ant-select-selection-item {
+  opacity: 1 !important;
+}
+
+.anticon-search {
+  display: none;
+}
+
+.g-action-parent {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  gap: 15px;
+}
+.ant-form-item {
+  margin-bottom: 0;
+}
