@@ -29,9 +29,8 @@ const Action = ({ handleSave, handleDel }) => {
     </div>
 }
 
-const InputAction = ({ type, allowers, handleSave, handleDel, keyIndex }) => {
+const InputAction = ({ allowers, handleSave, handleDel, keyIndex }) => {
     const [typeSelect, setTypeSelect] = useState('one')
-    console.log(typeSelect, type)
     const [form] = Form.useForm();
     return <div
         key={keyIndex}
@@ -65,7 +64,6 @@ const InputAction = ({ type, allowers, handleSave, handleDel, keyIndex }) => {
                 required
             >
                 <Select
-                    // defaultValue={type}
                     showSearch
                     style={{ width: "202px" }}
                     onChange={(sc) => {
@@ -89,7 +87,6 @@ const InputAction = ({ type, allowers, handleSave, handleDel, keyIndex }) => {
                   ]}
             >
                 <Select
-                    // defaultValue={allowers}
                     placeholder="Select a name"
                     mode="multiple"
                     style={{ width: "202px" }}
@@ -100,7 +97,7 @@ const InputAction = ({ type, allowers, handleSave, handleDel, keyIndex }) => {
             </Form.Item> : ''}
             <Form.Item>
                 <Action handleSave={async() => {
-                   const params = await form.validateFields().then(vl => vl)
+                   const params = await form.validateFields().then(vl => vl).catch(() => {})
                    handleSave(params)
                 }} handleDel={handleDel} />
             </Form.Item>
